@@ -1,0 +1,43 @@
+// Q2). Write a program in C to check whether an integer is Armstrong number or not.
+#include<stdio.h>
+#include<math.h>
+
+int main() {
+    printf("Enter an number: ");
+    
+    int number, _number, remainder = 0, result = 0;
+    scanf("%d", &number); // assume number is 456
+    
+    _number = number; //_number using as temporary number.
+
+    while(number > 0) {
+        remainder = number % 10;
+        /*
+        * 1. remainder is 6
+        * 2. 5
+        * 3. 4 not divideable so already we have our answer.
+        */
+        result = result + pow(remainder, 3);
+        /*
+        * 0 + 216 = 216
+        * 216 + 125 = 341
+        * 314 + 64 = 378
+        */
+        number /= 10;
+        /*
+        * 45.6 -> 45
+        * 4.5 -> 4
+        * 0.4 -> 0
+        */
+        
+        // here finally number: 0 so loop got false so auto loop exit.
+    }
+    
+    if(_number == result) { // 456 not = 378 so statement false..
+       printf("%d Is a Armstrong Number.", _number); 
+    } else {
+       printf("%d Is not a Armstrong Number.", _number);
+    }
+
+    return 0; 
+}
