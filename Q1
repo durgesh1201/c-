@@ -1,0 +1,36 @@
+// Q1). Write a program to reverse an integer in C.
+#include<stdio.h>
+
+int main() {
+    printf("Enter an value: ");
+    
+    int number, reverseNumber = 0, remainder;
+    scanf("%d", &number); // assume number is 456
+
+    while(number > 0) {
+        remainder = number % 10;
+        /*
+        * 1. remainder is 6
+        * 2. 5
+        * 3. 4 not divideable so already we have our answer.
+        */
+        reverseNumber = remainder + (reverseNumber * 10);
+        /*
+        * 6 + (0 * 10), 6 + 0 = 6
+        * 5 + (6 * 10), 5 + 60 = 65
+        * 4 + (65 * 10), 650 + 4 = 654
+        */
+        number /= 10;
+        /*
+        * 45.6 -> 45
+        * 4.5 -> 4
+        * 0.4 -> 0
+        */
+        
+        // here finally number: 0 so loop got false so auto loop exit.
+    }
+    
+    printf("Reversed: %d", reverseNumber);
+
+    return 0; 
+}
