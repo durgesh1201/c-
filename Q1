@@ -2,7 +2,7 @@
 #include<stdio.h>
 
 int main() {
-    printf("Enter an value: ");
+    printf("Enter an number: ");
     
     int number, reverseNumber = 0, remainder;
     scanf("%d", &number); // assume number is 456
