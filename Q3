@@ -1,0 +1,29 @@
+// Q3). Write a program in C to check given number is prime or not.
+#include<stdio.h>
+
+int main() {
+    printf("Enter an number: ");
+    
+    int number, _prime = 0;
+    scanf("%d", &number); // assume number is 456
+       
+    for(int i = 2; i <= (number/2); i++) {
+    /*
+    * Loop started with 2 as i and end with number/2.
+    * Let assume number is 7 is not an prime so loop will end on 3.
+    */
+        if(number % i == 0) {
+        // if 7 / 2 == 0 then loop will break here else go to next loop
+        // this statement will run when number will Truly divide to i.
+            _prime = 1;
+            break;
+        }
+    }
+    
+    if(_prime == 0) {
+        printf("Yes it's a prime number: %d", number);
+    } else if (_prime == 1) {
+        printf("No it's not a prime number: %d", number);
+    }
+    return 0; 
+}
